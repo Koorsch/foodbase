@@ -1,0 +1,95 @@
+---
+
+---
+
+<html lang="en">
+	<head>
+		<meta charset="utf-8" />
+		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+		<meta name="viewport" content="width=device-width" />
+		<meta name="generator" content={Astro.generator} />
+		<title>Astro</title>
+	</head>
+	<body>
+		<div class="container_wrapper">
+			<form class="">
+				<label for="name">Name</label>
+				<input type="text" name="name" id="form_name" required	placeholder="Your name">
+				
+				<label for="serves">Servings</label>
+				<input type="number" name="serves" id="form_serves">
+
+				<div>
+					<label for="origin">Origin</label>
+					<select name="origin" id="form_origin">
+						<option value="dk">Denmark</option>
+						<option value="en">UK</option>
+						<option value="se">Sweden</option>
+					</select>
+				</div>
+				
+				<div>
+					<label for="form_studentFriendly">Studentfriendly</label>
+					<input type="checkbox" name="studentFriendly" id="form_studentFriendly">
+				</div>
+				
+				<label for="form_description">Description
+					<textarea id="desc" rows="10" cols="1" placeholder="Description"></textarea>
+				</label>
+				<input type="text" name="description" id="form_description">
+				
+				<div>
+					<label for="form_allergens">Allergens</label>
+					<input type="text" name="allergens" id="form_allergens">
+				</div>
+				<div>
+					<label for="form_diet">Diet</label>
+					<select name="diet" id="form_diet">
+						<option value="vegetarian" selected>Vegetarian</option>
+						<option value="vegan">Vegan</option>
+						<option value="pescatarian">Pescatarian</option>
+						<option value="meat">Carnivore</option>
+					</select>
+
+				</div>
+				<button>Submit</button>
+			</form>
+		</div>
+	</body>
+	</html>
+	
+	<style>
+		html {
+			font-family: monospace;
+		}
+		body {
+			display: grid;
+			background-color: beige;
+			place-content: center;
+	}
+	.container_wrapper {
+		border: 2px dotted black;
+		border-radius: 1rem;
+		padding-inline: 1rem;
+
+	}
+	form {
+		display: inline-grid;
+		padding-block: 1rem;
+
+		& > * + * {
+			margin-block: 0.5rem;
+		}
+		& label {
+			font-weight: 700;
+		}
+		& textarea {
+			width: 100%;
+		}
+		& div {
+			display: grid;
+			grid-template-columns: 1fr auto;
+			column-gap: 0.5rem;
+		} 
+	}
+</style>

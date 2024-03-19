@@ -1,0 +1,66 @@
+:root {
+  --content: 70rem;
+  --bg-col: gray;
+  --container-col: beige;
+}
+html {
+  font-family: monospace;
+}
+body {
+  display: grid;
+  grid: auto / [page-start] 1fr [content] var(--content, 1fr) [page-content] 1fr [page-end];
+  background-color: var(--bg-col);
+}
+main {
+  grid-column: content;
+}
+.container_wrapper {
+  container: foodForm / inline-size;
+  border: 2px dotted black;
+  border-radius: 1rem;
+  background: var(--container-col);
+  padding: 1rem;
+  & legend {
+    font-size: clamp(2rem, 8cqw, 5rem);
+    text-align: center;
+    margin-block: 1rem;
+  }
+}
+@container foodForm (width < 500px) {
+  /* remember to add stuff */
+}
+form {
+  display: grid;
+  place-content: center;
+  padding-block: 0.5rem;
+
+  & > * + * {
+    margin-block: 0.5rem;
+  }
+  & label {
+    font-weight: 700;
+  }
+  & textarea {
+    background-color: #fff;
+    border-radius: 1rem;
+    border: 2px dotted gray;
+    padding-inline: 2rem;
+    /* width: 100%; */
+    resize: both;
+  }
+  & input,
+  select {
+    background-color: #fff;
+  }
+  & div {
+    display: grid;
+    grid-template-columns: 1fr auto;
+    border: 0;
+    column-gap: 0.5rem;
+  }
+  & fieldset {
+    border: 0;
+    margin-inline-start: 0;
+    padding-inline-start: 0;
+  }
+}

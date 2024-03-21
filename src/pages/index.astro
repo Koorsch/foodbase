@@ -1,77 +1,11 @@
 ---
-import '../styles/main.css';
+import BasicLayout from "../layouts/BasicLayout.astro"
+import FoodForm from "../components/FoodForm.astro";
 ---
 
-<html lang="en">
-	<head>
-		<meta charset="utf-8" />
-		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-		<meta name="viewport" content="width=device-width" />
-		<meta name="generator" content={Astro.generator} />
-		<title>Astro</title>
-	</head>
-	<body>
-		<main>
-			<div class="container_wrapper">
-				<form aria-labelledby="header_food">
-					<h1 id="header_food">The Foodbase</h1>
+<BasicLayout title="Foodbase">
+		<FoodForm/>
+</BasicLayout>
 
-						<!-- name text-->
-						<fieldset>
-							<label for="name">Name</label>
-							<input type="text" name="name" id="name" required placeholder="Name the dish" inputmode="text">
-						</fieldset>
-						<!-- serves number -->
-						<fieldset>
-							<label for="serves">Servings</label>
-							<input type="number" name="serves" id="serves" inputmode="numeric">
-						</fieldset>
-						<!-- origin text -->
-						<fieldset>
-							<label for="origin">Origin</label>
-							<select name="origin" id="origin">
-								<option value="dk">Denmark</option>
-								<option value="en">UK</option>
-								<option value="se">Sweden</option>
-							</select>
-						</fieldset>
-						
-						<fieldset>
-							<label for="form_studentFriendly">Studentfriendly</label>
-							<input type="checkbox" name="studentFriendly" id="form_studentFriendly">
-						</fieldset>
-						
-						<label for="form_description">Ingredients</label>
-						<textarea id="form_description" rows="10" cols="1" placeholder="What's in your dish?" inputmode="text"></textarea>
-						
-						<fieldset id="allergens">
-							<legend>Allergens</legend>
-							<label for="form_allergens_nuts">Nuts</label>
-							<input type="checkbox" name="allergens" id="form_allergens_nuts" value="nuts">
-							<label for="form_allergens_lactos">Lactos</label>
-							<input type="checkbox" name="allergens" id="form_allergens_lactos" value="lactos">
-							<label for="form_allergens_lactos">Food</label>
-							<input type="checkbox" name="allergens" id="form_allergens_food" value="food">
-						</fieldset>
-						
-						<fieldset id="form_diet">
-							<legend>Choose your diet.</legend>
-							<label for="vegetarian">Vegetarian</label>
-							<input type="radio" id="vegetarian" name="diet" value="vegetarian">Vegetarian</option>
-							<label for="vegan">Vegan</label>
-							<input type="radio" id="vegan" name="diet" value="vegan">Vegan</option>
-							<label for="pescatarian">Pescatarian</label>
-							<input type="radio" id="pescatarian" name="diet" value="pescatarian">Pescatarian</option>
-							<label for="carnivore">ALL THE MEAT</label>
-							<input type="radio" id="carnivore" name="diet" value="meat">Carnivore</option>
-						</fieldset>
-						<button id=submit" type="submit">Send</button>
-					</form>
-			</div>
-		</main>
-	</body>
-</html>
-	
-	<style>
-
+<style>
 </style>

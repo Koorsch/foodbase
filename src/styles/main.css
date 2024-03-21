@@ -1,20 +1,24 @@
-@layer reset, global, main;
+@layer reset, global, main, components, states;
 
-@import url(../styles/reset.css);
-@import url(../styles/global.css);
+@import url("../styles/reset.css") layer(reset);
+@import url("../styles/global.css") layer(global);
+@import url("../styles/components.css") layer(components);
+@import url("../styles/states.css") layer(states);
 
-button {
-  & :has([type="submit"]) {
-    max-width: 200px;
-    place-self: center;
-    padding: 1rem 2rem;
-    background-color: #fff;
-    border: 0.25rem dotted #000;
+html {
+  font-family: monospace;
+}
+body {
+  display: grid;
+  background-color: var(--bg-col);
+}
+main {
+  display: grid;
+  grid: auto 1fr / [page-start] 1fr [content] minmax(0, var(--content)) 1fr [page-end];
+  & > * {
+    grid-column: content;
   }
-  & :hover {
-    background-color: hotpink;
-  }
-  & :not(:hover) {
-    background-color: aqua;
+  & .full {
+    grid-column: page;
   }
 }
